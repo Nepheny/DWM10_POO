@@ -5,8 +5,12 @@
 
         public function saveData($key, $value)
         {
-            session_start();
             $_SESSION[$key] = $value;
+            return $_SESSION[$key];
+        }
+
+        static function getData($key)
+        {
             return $_SESSION[$key];
         }
     }

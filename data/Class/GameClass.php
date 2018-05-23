@@ -8,9 +8,13 @@
         {
             if(isset($_GET['state']) && $_GET['state'] == 'save') {
                 $this->createFighters($_POST, 2);
+            } elseif(isset($_GET['state']) && $_GET['state'] == 'reset') {
+                session_destroy();
+                header('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
             }
-            if(isset($_SESSION['playerOne']) && isset($_SESSION['playerTwo'])) {
-                RenderHelperClass::displayTemplate('fight');
+
+            if(isset($_SESSION['fighters'])) {
+                RenderHelperClass::displayTemplate('fight', SaveHelperClass::getData('fighters'));
             } else {
                 RenderHelperClass::displayTemplate('form');
             }
@@ -25,7 +29,8 @@
                     $this->fighters[] = new $class($value[0], $value[1], $value[2]);
                 }
             }
-            var_dump($this->fighters);die;
+
+            SaveHelperClass::saveData('fighters', $this->fighters);
         }
 
         // Each fighter hits the other fighter

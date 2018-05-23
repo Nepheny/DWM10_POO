@@ -17,6 +17,7 @@
             <?php
                 // $game->fight();
             ?>
+            <a href="index.php?state=reset">Reset</a>
         </main>
     </body>
 </html>
