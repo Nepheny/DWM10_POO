@@ -1,0 +1,47 @@
+<form class="" action="/index.php?state=save" method="POST">
+    <div class="first-hero">
+        <h3>Premier héros</h3>
+        <div>
+            <label for="name">Nom :</label>
+            <input type="text" name="firstHero[]" id="name"/>
+        </div>
+        <div>
+            <label for="hp">HP :</label>
+            <input type="text" name="firstHero[]" id="hp"/>
+        </div>
+        <div>
+            <label for="mp">MP :</label>
+            <input type="text" name="firstHero[]" id="mp"/>
+        </div>
+        <div>
+            <label for="class">Classe :</label>
+            <select class="" name="firstHero[]" id="class"/>
+                <option value="mage">Mage</option>
+                <option value="warrior">Warrior</option>
+            </select>
+        </div>
+    </div>
+    <div class="second-hero">
+            <h3>Second héros</h3>
+        <div>
+            <label for="name">Nom :</label>
+            <input type="text" name="secondHero[]" id="name"/>
+        </div>
+        <div>
+            <label for="hp">HP :</label>
+            <input type="text" name="secondHero[]" id="hp"/>
+        </div>
+        <div>
+            <label for="mp">MP :</label>
+            <input type="text" name="secondHero[]" id="mp"/>
+        </div>
+        <div>
+            <label for="class">Classe :</label>
+            <select class="" name="secondHero[]" id="class"/>
+                <option value="mage">Mage</option>
+                <option value="warrior">Warrior</option>
+            </select>
+        </div>
+    </div>
+    <input type="submit" value="OK"/>
+</form>
